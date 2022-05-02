@@ -29,7 +29,11 @@
                 				<div class="form-group">
                 					<label>Writer</label>
                 					<input class="form-control" name="writer">                				
-                				</div>  
+                				</div>
+                				<input type="hidden" value="1" name="pageNum" />
+								<input type="hidden" value="10" name="amount" />
+								<input type="hidden" value="${cri.type}" name="type" />
+								<input type="hidden" value="${cri.keyword}" name="keyword" /> 
                 				<button type="submit" class="btn btn-default">Submit</button>              			
                 				<button type="reset" class="btn btn-default">reset</button>              			
                 			</form>

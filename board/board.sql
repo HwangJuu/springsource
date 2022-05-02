@@ -73,3 +73,27 @@ from(
 	)
 where rn> ?;
 
+
+--페이지 나누기 + 검색
+
+--타이틀 == 모달 검색
+--type : 제목
+--/list?pageNum=1&amount=20&type=T&keyword=모달
+select bno, title, writer, regdate, updatedate
+from(
+	select /*+INDEX_DESC(spring_board pk_spring_board)*/rownum rn, bno, title, writer,regdate, updatedate
+	from spring_board
+	where bno >=0 and (title like '%모달%') and rownum<=(1 * 30)
+	)
+where rn> (1-1)*30;
+
+--type : 제목 or 내용
+----/list?pageNum=1&amount=20&type=TC&keyword=모달
+select bno, title, writer, regdate, updatedate
+from(
+	select /*+INDEX_DESC(spring_board pk_spring_board)*/rownum rn, bno, title, writer,regdate, updatedate
+	from spring_board
+	where (title like '%모달%' or content like '%모달%') and bno >=0  and rownum<=(1 * 30)
+	)
+where rn> (1-1)*30;
+
