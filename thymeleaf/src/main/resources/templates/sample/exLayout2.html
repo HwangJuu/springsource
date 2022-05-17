@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<div style="border: 1px solid lightblue">
+		<th:block th:replace="~{/fragments/fragment2}"></th:block>
+	</div>
+
+
+	<!-- header 조각 포함
+		~{/경로/파일명::fragment이름}
+	 -->
+	<h1>Layout1 - part1</h1>
+	<div th:replace="~{/fragments/fragment1::part1}"></div>
+	
+	<h1>Layout1 - part2</h1>
+	<div th:replace="~{/fragments/fragment1::part2}"></div>
+	
+	<h1>Layout1 - part3</h1>
+	<!-- <div th:replace="~{/fragments/fragment1::part3}"></div> -->
+	<!-- 태그를 사용하지 않고 thymeleaf 기능 적용 -->
+	<th:block th:replace="~{/fragments/fragment1::part3}"></th:block>
+	
+	
+	
+</body>
+</html>

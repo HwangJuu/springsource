@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+	<!-- 링크 처리 : @{절대경로 or 상대경로}
+			절대 경로 : 주소 입력 @{http://localhost:8081/sample/ex1}
+			상대 경로 : @{/sample/ex1}, @{ex1}
+	 -->
+		<li><a th:href="@{http://localhost:8081/sample/ex1}">ex1</a></li>
+		<li><a th:href="@{/sample/ex1}">ex1</a></li>
+		<li><a th:href="@{ex1}">ex1</a></li>
+		<!-- 
+			기존 방식 : <a href="ex8?param1=aaa&param2=bbb>ex8</a>
+			thymeleaf 방식 : <a th:href="@{ex8(param1='aaa', param2='bbb')}">ex8</a>
+		 -->
+		<li><a th:href="@{ex8(param1='aaa', param2='bbb')}">ex8</a></li>
+	</ul>
+</body>
+</html>

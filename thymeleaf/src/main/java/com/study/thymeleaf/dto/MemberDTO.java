@@ -1,5 +1,6 @@
 package com.study.thymeleaf.dto;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -15,6 +16,6 @@ public class MemberDTO {
 	private String mid;
 	private String mpw;
 	private String mname;
-	private LocalDateTime regdate;
+	private Timestamp regdate;
 
 }

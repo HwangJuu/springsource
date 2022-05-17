@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 th:text="${result}"></h1>
+
+	<script th:inline="javascript">
+		//Uncaught SyntaxError: Unexpected token '{'
+		//let result = ${result};
+		//Uncaught ReferenceError: SUCCESS is not defined at ex6:13:16 ==> th:inline="javascript"
+		let result = [[${result}]];
+	</script>
+</body>
+</html>
